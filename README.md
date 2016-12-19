@@ -5,18 +5,19 @@ Dialgogue parser which can read a text file and convert it into a class which ca
 See example script file for formatting of scripts.
 
 Tags:
-// -> line will be ignored
 
-# # -> contains the title of the conversation
+'//' -> line will be ignored
 
-< > -> variables/flags to gate conversation progress
+'# #' -> contains the title of the conversation
 
-| | -> actors in conversation
+'< >' -> variables/flags to gate conversation progress
 
-~ ~ -> breaks up parts in conversation
+'| |' -> actors in conversation
 
-{ } -> numbers each line set
+'~ ~' -> breaks up parts in conversation
 
-" " -> each line of dialogue to actually be spoken
+'{ }' -> numbers each line set
 
-[ ] -> contains the line number that this line leads to if executed
+'" "' -> each line of dialogue to actually be spoken
+
+'[ ]' -> contains the line number that this line leads to if executed
