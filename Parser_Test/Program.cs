@@ -7,18 +7,36 @@ using System.Threading.Tasks;
 
 namespace Parser_Test
 {
-    //struct to hold info on each lines
-    public struct node
+    //class to hold info on each interaction
+    public class node
     {
-        //public Rect w;
-        public string line;
-        public bool response;
-        public string owner;
-        public List<gate> flags;
-        public int sceneNum;
-        public int lineNum;
-        public int jumpNum;
 
+        //spoken dialogue
+        public string line;
+        //flag for whether player can respond
+        public bool response;
+        // owner of the node, is an actor this should be converted
+        // to hold an actor class not a string
+        public string owner;
+
+        //list of responses
+        public List<reply> reactions;
+
+    }
+
+    // class to hold all the responses for a node
+    // inherits from node
+    public class reply: node
+    {
+        // list of all the gates that affect this reply
+        // i.e. this option won't be presented unless x has been fulfilled
+        public List<gate> flags;
+        // id for this node
+        public int sceneNum;
+        // id for each resopnse in the node
+        public int lineNum;
+        // number of the node that a response links to if executed
+        public int jumpNum;
     }
     public struct gate
     {
@@ -89,7 +107,6 @@ namespace Parser_Test
                 for (int j = 0; j < lines.Length; j++)
                 {
                     
-
                     if (lines[j] == "")
                     {
                         //offset++;
@@ -115,7 +132,6 @@ namespace Parser_Test
                                     //decrement offset to keep stable
                                     offset--;
                                     continue;
-
 
                                 case '{': // find the scene num
                                     end = characters.LastIndexOf('}');
