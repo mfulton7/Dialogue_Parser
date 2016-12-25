@@ -8,3 +8,4 @@ To-Do List:
 - edit tree within gui
 * command line application to test created trees outside unity
 * convert to dll
+* method to write a tree object to a text file
