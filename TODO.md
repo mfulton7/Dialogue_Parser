@@ -1,5 +1,5 @@
 To-Do List:
-
+te
 * alter parsing structure to accurately populate new node system
 * add error catching
 * create parser to check the file to see if it is properly formatted before creating tree
